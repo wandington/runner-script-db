@@ -1,0 +1,25 @@
+ALTER TABLE CARTORIO.DOCUMENT ADD TIMESTMP VARCHAR2(1);
+
+GRANT SELECT ON dbamv.prestador TO cartorio;
+
+GRANT SELECT ON dbamv.conselho TO cartorio;
+
+GRANT SELECT ON dbamv.esp_med TO cartorio;
+
+GRANT SELECT ON dbamv.especialid TO cartorio;
+
+GRANT SELECT ON dbamv.pagu_objeto TO cartorio;
+
+CREATE INDEX CART_ORI_CON_IDX ON cartorio.document(ORIGIN,CONTRACT);
+
+CREATE INDEX CART_CON_IDX ON cartorio.document(CONTRACT);
+
+CREATE INDEX CART_ORI_IDX ON cartorio.document(ORIGIN);
+
+CREATE INDEX CART_ORI_STA_IDX ON cartorio.document(ORIGIN,STATUS_ID);
+
+CREATE INDEX CART_ID_DESC_IDX ON cartorio.document(DOCUMENT_ID DESC);
+
+CREATE INDEX CART_ID_ASC_IDX ON cartorio.document(DOCUMENT_ID ASC);
+
+CREATE INDEX CART_SIG_DOC_ID_IDX ON cartorio.signature(DOCUMENT_ID);

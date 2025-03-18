@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  sql-runner:
+    image: dockerfile:1
+    container_name: sql-runner
+    env_file:
+      - .env
+    volumes:
+      - ./scripts:/scripts
+    entrypoint: ["/bin/bash", "-c", "/scripts/script_db.sh"]
