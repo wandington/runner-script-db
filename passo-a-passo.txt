@@ -1,0 +1,20 @@
+Passo a Passo
+
+1. Baixar a imagem para o servidor utilizando o docker build;
+    COMANDO: docker build -t dockerfile:1 .
+
+2. Editar o arquivo .env com os dados do banco que será realizado a aplicação dos scripts;
+
+3. Colocar os arquivos .SQL os quais serão aplicados dentro do diretorio scripts;
+
+4. Acessar o diretorio scripts e dar permissão de execução para o arquivo script_db.sh;
+    COMANDO: chmod +x script_db.sh
+
+5. Executar o docker compose para realizar a aplicação do scripts;
+    COMANDO: docker-compose -f docker-compose-runner.yaml up -d ou docker compose -f docker-compose-runner.yaml up -dados
+
+6. Verificar logs de execução;
+    COMANDO: docker logs -f sql-runner
+
+
+APLICAÇÃO DE SCRIPTS REALIZADA COM SUCESSO !
